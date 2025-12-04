@@ -1,140 +1,371 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
-const CODE_EXAMPLES = [
+const INTERACTIVE_SCENARIOS = [
   {
-    title: "Mise à jour système",
-    code: `# Mise à jour optionnelle et contrôlée
-$ sudo apt update
-$ sudo apt upgrade
-
-Voulez-vous continuer ? [O/n] _
-# VOUS décidez quand mettre à jour`,
+    id: "update",
+    title: "🔄 Mise à jour système",
+    initialOutput: [
+      "user@linux:~$ sudo apt update",
+      "Lecture des listes de paquets... Fait",
+      "Construction de l'arbre des dépendances... Fait",
+      "142 paquets peuvent être mis à jour.",
+      "",
+      "user@linux:~$ sudo apt upgrade",
+      "Les paquets suivants seront mis à jour :",
+      "  firefox libssl3 linux-image-6.5.0 nodejs python3",
+      "",
+    ],
+    question: "Voulez-vous continuer ? [O/n]",
+    choices: [
+      {
+        key: "o",
+        label: "Oui, mettre à jour",
+        response: [
+          "Téléchargement des paquets...",
+          "████████████████████ 100%",
+          "Installation des mises à jour...",
+          "✅ Mise à jour terminée avec succès !",
+          "",
+          "# 🎉 VOUS contrôlez vos mises à jour",
+          "# Pas de redémarrage forcé à 3h du matin !",
+        ],
+      },
+      {
+        key: "n",
+        label: "Non, pas maintenant",
+        response: [
+          "Abandon.",
+          "",
+          "# ✨ C'est VOTRE choix !",
+          "# Mettez à jour quand VOUS le décidez",
+          "# Pas quand Microsoft le décide.",
+        ],
+      },
+    ],
   },
   {
-    title: "Installation de logiciels",
-    code: `# Installation gratuite et légale
-$ sudo apt install firefox gimp vlc
-
-Téléchargement... 100%
-Installation... Terminé !
-
-# 0€ de licence. Toujours.`,
+    id: "install",
+    title: "📦 Installation de logiciels",
+    initialOutput: [
+      "user@linux:~$ apt search office",
+      "libreoffice - Suite bureautique complète",
+      "onlyoffice - Suite collaborative",
+      "calligra - Suite KDE",
+      "",
+    ],
+    question: "Installer LibreOffice gratuitement ? [O/n]",
+    choices: [
+      {
+        key: "o",
+        label: "Oui, installer",
+        response: [
+          "user@linux:~$ sudo apt install libreoffice",
+          "Téléchargement de libreoffice...",
+          "████████████████████ 100%",
+          "Installation...",
+          "✅ LibreOffice installé !",
+          "",
+          "# 💰 Économie : 150€/an de licence Office",
+          "# 🔓 100% compatible avec les fichiers Microsoft",
+        ],
+      },
+      {
+        key: "n",
+        label: "Non merci",
+        response: [
+          "D'accord, pas de problème !",
+          "",
+          "# 📝 Vous pouvez aussi essayer :",
+          "# - OnlyOffice (gratuit)",
+          "# - Google Docs (en ligne)",
+          "# - Cryptpad (chiffré)",
+        ],
+      },
+    ],
   },
   {
-    title: "Vérification sécurité",
-    code: `# Code source ouvert et vérifiable
-$ cat /etc/os-release
-
-NAME="Ubuntu"
-VERSION="24.04 LTS"
-SECURITY="Vérifié par la communauté"
-
-# Pas de backdoor, code auditable`,
+    id: "customize",
+    title: "🎨 Personnalisation",
+    initialOutput: [
+      "user@linux:~$ ls /usr/share/themes/",
+      "Adwaita  Arc-Dark  Dracula  Nord  Catppuccin",
+      "",
+      "user@linux:~$ ls /usr/share/icons/",
+      "Papirus  Numix  Flat-Remix  Tela",
+      "",
+    ],
+    question: "Changer le thème du bureau ? [O/n]",
+    choices: [
+      {
+        key: "o",
+        label: "Oui, personnaliser !",
+        response: [
+          "user@linux:~$ gsettings set org.gnome.desktop.interface gtk-theme 'Dracula'",
+          "Thème appliqué : Dracula 🧛",
+          "",
+          "# 🎨 LIBERTÉ TOTALE de personnalisation",
+          "# Changez les icônes, les polices, les couleurs...",
+          "# Votre PC, VOS règles !",
+          "",
+          "# 💡 Commentaire : Sous Windows, vous payez",
+          "# pour des thèmes basiques. Ici, tout est gratuit !",
+        ],
+      },
+      {
+        key: "n",
+        label: "Garder le défaut",
+        response: [
+          "Le thème par défaut est conservé.",
+          "",
+          "# 👌 Pas de souci ! Vous pouvez changer",
+          "# d'avis à tout moment.",
+          "# Votre système, votre choix !",
+        ],
+      },
+    ],
   },
   {
-    title: "Gestion des données",
-    code: `# Vos données restent CHEZ VOUS
-$ ls ~/Documents
-
-rapport.odt
-photos/
-projets/
-
-# Aucune télémétrie par défaut
-# Respect total du RGPD`,
-  },
-  {
-    title: "Support matériel",
-    code: `# PC de 2010 ? No problemo !
-$ neofetch
-
-OS: Linux Mint 21
-Kernel: 6.5.0
-Uptime: 47 days
-Memory: 512MB / 4GB
-
-# Ressuscite les vieux PC`,
+    id: "privacy",
+    title: "🔒 Vie privée",
+    initialOutput: [
+      "user@linux:~$ cat /etc/telemetry.conf",
+      "cat: /etc/telemetry.conf: Aucun fichier",
+      "",
+      "# 🎉 Pas de fichier de télémétrie !",
+      "# Linux ne vous espionne pas par défaut.",
+      "",
+    ],
+    question: "Vérifier les connexions réseau ? [O/n]",
+    choices: [
+      {
+        key: "o",
+        label: "Oui, vérifier",
+        response: [
+          "user@linux:~$ ss -tuln | grep ESTABLISHED",
+          "",
+          "# 🔍 Connexions actives : Seulement VOS apps",
+          "# Aucune connexion vers Microsoft",
+          "# Aucune connexion vers des serveurs publicitaires",
+          "",
+          "# 🛡️ VOTRE vie privée est respectée",
+          "# Contrairement à Windows qui envoie",
+          "# vos données à Microsoft en permanence",
+        ],
+      },
+      {
+        key: "n",
+        label: "Non, je fais confiance",
+        response: [
+          "# 👍 Et vous avez raison de faire confiance !",
+          "# Le code source est ouvert et auditable",
+          "# Des millions de développeurs vérifient",
+          "",
+          "# 💪 La sécurité par la transparence",
+        ],
+      },
+    ],
   },
 ];
 
 export function LinuxTerminal({ isOpen = true, onClose }) {
-  const [activeTab, setActiveTab] = useState(0);
-  const [typedCode, setTypedCode] = useState("");
+  const [activeScenario, setActiveScenario] = useState(0);
+  const [output, setOutput] = useState([]);
   const [isTyping, setIsTyping] = useState(true);
+  const [showQuestion, setShowQuestion] = useState(false);
+  const [answered, setAnswered] = useState(false);
+  const [typingIndex, setTypingIndex] = useState(0);
 
+  const scenario = INTERACTIVE_SCENARIOS[activeScenario];
+
+  // Reset et taper le texte initial
   useEffect(() => {
-    const currentCode = CODE_EXAMPLES[activeTab].code;
-    setTypedCode("");
+    setOutput([]);
+    setShowQuestion(false);
+    setAnswered(false);
     setIsTyping(true);
+    setTypingIndex(0);
+  }, [activeScenario]);
 
+  // Animation de frappe ligne par ligne
+  useEffect(() => {
+    if (!isTyping || answered) return;
+
+    if (typingIndex < scenario.initialOutput.length) {
+      const timeout = setTimeout(() => {
+        setOutput((prev) => [...prev, scenario.initialOutput[typingIndex]]);
+        setTypingIndex((prev) => prev + 1);
+      }, 150);
+      return () => clearTimeout(timeout);
+    } else {
+      setIsTyping(false);
+      setTimeout(() => setShowQuestion(true), 300);
+    }
+  }, [typingIndex, isTyping, scenario, answered]);
+
+  const handleChoice = useCallback((choice) => {
+    setAnswered(true);
+    setShowQuestion(false);
+
+    // Ajouter la réponse utilisateur
+    setOutput((prev) => [...prev, `> ${choice.label}`, ""]);
+
+    // Ajouter la réponse du système ligne par ligne
     let index = 0;
-    const typeInterval = setInterval(() => {
-      if (index < currentCode.length) {
-        setTypedCode(currentCode.slice(0, index + 1));
+    const addLine = () => {
+      if (index < choice.response.length) {
+        setOutput((prev) => [...prev, choice.response[index]]);
         index++;
-      } else {
-        setIsTyping(false);
-        clearInterval(typeInterval);
+        setTimeout(addLine, 100);
       }
-    }, 20);
+    };
+    setTimeout(addLine, 300);
+  }, []);
 
-    return () => clearInterval(typeInterval);
-  }, [activeTab]);
+  const nextScenario = useCallback(() => {
+    setActiveScenario((prev) => (prev + 1) % INTERACTIVE_SCENARIOS.length);
+  }, []);
 
   if (!isOpen) return null;
 
   return (
-    <div className="bg-[#1e1e1e] rounded-lg overflow-hidden shadow-2xl border border-gray-700 w-full max-w-2xl">
+    <motion.div
+      initial={{ opacity: 0, y: 20, scale: 0.95 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      exit={{ opacity: 0, y: 20, scale: 0.95 }}
+      className="bg-[#1a1b26] rounded-xl overflow-hidden shadow-2xl border border-purple-500/30 w-full max-w-2xl"
+    >
       {/* Barre de titre */}
-      <div className="bg-[#323232] px-4 py-2 flex items-center justify-between">
-        <div className="flex items-center gap-2">
+      <div className="bg-gradient-to-r from-purple-900 to-indigo-900 px-4 py-2 flex items-center justify-between">
+        <div className="flex items-center gap-3">
           <div className="flex gap-1.5">
             <button
               onClick={onClose}
-              className="w-3 h-3 rounded-full bg-red-500 hover:bg-red-400"
+              className="w-3 h-3 rounded-full bg-red-500 hover:bg-red-400 transition-colors"
             />
             <div className="w-3 h-3 rounded-full bg-yellow-500" />
             <div className="w-3 h-3 rounded-full bg-green-500" />
           </div>
-          <span className="text-white/70 text-sm ml-2">Terminal — bash</span>
+          <span className="text-white/90 text-sm font-medium">
+            🐧 Terminal Linux — Interactif
+          </span>
         </div>
+        <span className="text-purple-300 text-xs">bash 5.2</span>
       </div>
 
-      {/* Onglets */}
-      <div className="bg-[#2d2d2d] flex gap-1 px-2 py-1 overflow-x-auto">
-        {CODE_EXAMPLES.map((example, i) => (
+      {/* Onglets des scénarios */}
+      <div className="bg-[#24283b] flex gap-1 px-2 py-1.5 overflow-x-auto border-b border-purple-500/20">
+        {INTERACTIVE_SCENARIOS.map((s, i) => (
           <button
-            key={i}
-            onClick={() => setActiveTab(i)}
-            className={`px-3 py-1 text-xs rounded transition-colors whitespace-nowrap
+            key={s.id}
+            onClick={() => setActiveScenario(i)}
+            className={`px-3 py-1.5 text-xs rounded-lg transition-all whitespace-nowrap font-medium
               ${
-                activeTab === i
-                  ? "bg-[#1e1e1e] text-white"
-                  : "text-white/50 hover:text-white/80"
+                activeScenario === i
+                  ? "bg-purple-600 text-white shadow-lg shadow-purple-500/30"
+                  : "text-gray-400 hover:text-white hover:bg-white/5"
               }
             `}
           >
-            {example.title}
+            {s.title}
           </button>
         ))}
       </div>
 
       {/* Contenu du terminal */}
-      <div className="p-4 font-mono text-sm text-green-400 min-h-[200px] max-h-[300px] overflow-auto">
-        <pre className="whitespace-pre-wrap">
-          {typedCode}
-          {isTyping && <span className="animate-pulse">▊</span>}
-        </pre>
+      <div className="p-4 font-mono text-sm min-h-[280px] max-h-[350px] overflow-auto bg-[#1a1b26]">
+        {output.map((line, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.1 }}
+            className={`${
+              line.startsWith("#")
+                ? "text-gray-500"
+                : line.startsWith("user@")
+                ? "text-green-400"
+                : line.startsWith(">")
+                ? "text-yellow-400 font-bold"
+                : line.startsWith("✅")
+                ? "text-green-400"
+                : line.startsWith("💰") ||
+                  line.startsWith("🎉") ||
+                  line.startsWith("💡")
+                ? "text-purple-400"
+                : line.includes("████")
+                ? "text-cyan-400"
+                : "text-gray-300"
+            }`}
+          >
+            {line || "\u00A0"}
+          </motion.div>
+        ))}
+
+        {isTyping && <span className="text-green-400 animate-pulse">▊</span>}
+
+        {/* Question interactive */}
+        <AnimatePresence>
+          {showQuestion && !answered && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              className="mt-4 space-y-3"
+            >
+              <div className="text-yellow-400 font-bold flex items-center gap-2">
+                <span className="animate-pulse">❯</span>
+                {scenario.question}
+              </div>
+              <div className="flex flex-wrap gap-2 mt-2">
+                {scenario.choices.map((choice) => (
+                  <motion.button
+                    key={choice.key}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => handleChoice(choice)}
+                    className="px-4 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-lg text-sm font-medium hover:from-purple-500 hover:to-indigo-500 transition-all shadow-lg shadow-purple-500/20"
+                  >
+                    [{choice.key.toUpperCase()}] {choice.label}
+                  </motion.button>
+                ))}
+              </div>
+              <p className="text-gray-500 text-xs mt-2">
+                💡 Cliquez sur un bouton ou appuyez sur la touche correspondante
+              </p>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Bouton suivant après réponse */}
+        {answered && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1 }}
+            className="mt-4 pt-4 border-t border-purple-500/20"
+          >
+            <button
+              onClick={nextScenario}
+              className="px-4 py-2 bg-green-600 hover:bg-green-500 text-white rounded-lg text-sm font-medium transition-colors"
+            >
+              ➡️ Scénario suivant
+            </button>
+          </motion.div>
+        )}
       </div>
 
       {/* Barre d'info */}
-      <div className="bg-[#007acc] px-4 py-1 text-white text-xs flex justify-between">
-        <span>🐧 Linux - Le système qui respecte vos libertés</span>
-        <span>UTF-8 | bash</span>
+      <div className="bg-gradient-to-r from-purple-600 to-indigo-600 px-4 py-1.5 text-white text-xs flex justify-between items-center">
+        <span className="flex items-center gap-2">
+          <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+          🐧 Linux — Vous êtes libre de personnaliser comme vous voulez !
+        </span>
+        <span className="text-purple-200">UTF-8 | bash</span>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

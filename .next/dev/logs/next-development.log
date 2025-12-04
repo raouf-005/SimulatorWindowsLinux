@@ -1,8 +1,1648 @@
-[00:00:01.185] Server  LOG      ✓ Ready in 735ms
-[00:00:07.364] Server  LOG      ○ Compiling / ...
-[00:00:13.656] Browser WARN    You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.
-[00:00:13.656] Browser WARN    You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.
-[00:00:14.684] Browser WARN    You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.
-[00:00:14.684] Browser WARN    You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.
-[00:00:14.684] Browser WARN    You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.
-[00:00:14.684] Browser WARN    You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.
+[00:00:00.883] Server  LOG      ✓ Ready in 583ms
+[00:01:00.863] Server  LOG      ○ Compiling / ...
+[00:01:05.892] Browser WARN    You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.
+[00:01:05.892] Browser WARN    You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.
+[00:01:06.223] Browser WARN    You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.
+[00:01:06.223] Browser WARN    You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.
+[00:01:07.707] Browser WARN    You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.
+[00:01:07.708] Browser WARN    You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.
+[00:01:07.708] Browser WARN    You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.
+[00:01:07.708] Browser WARN    You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.
+[00:01:48.813] Browser WARN    You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.
+[00:01:48.813] Browser WARN    You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.
+[00:01:50.633] Browser WARN    You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.
+[00:01:50.634] Browser WARN    You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.
+[00:01:50.634] Browser WARN    You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.
+[00:01:50.634] Browser WARN    You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.
+[00:03:42.915] Server  LOG      ✓ Compiled in 69ms
+[00:11:23.406] Browser WARN    You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.
+[00:11:23.406] Browser WARN    You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.
+[00:11:25.223] Browser WARN    You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.
+[00:11:25.223] Browser WARN    You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.
+[00:11:25.223] Browser WARN    You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.
+[00:11:25.223] Browser WARN    You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.
+[00:12:15.981] Server  LOG      ✓ Compiled in 132ms
+[00:13:31.386] Server  LOG      ✓ Compiled in 45ms
+[00:15:44.547] Browser WARN    You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.
+[00:15:44.547] Browser WARN    You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.
+[00:15:48.190] Browser WARN    You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.
+[00:15:48.190] Browser WARN    You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.
+[00:15:48.190] Browser WARN    You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.
+[00:15:48.190] Browser WARN    You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.
+[00:16:27.942] Server  LOG      ✓ Compiled in 52ms
+[00:16:28.052] Browser WARN    You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.
+[00:16:28.052] Browser WARN    You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.
+[00:20:12.384] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.387] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.390] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.393] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.427] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.429] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.431] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.433] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.443] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.447] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.449] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.458] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.461] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.464] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.467] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.472] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.477] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.479] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.481] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.482] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.486] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.488] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.489] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.492] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.495] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.496] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.498] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.499] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.503] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.504] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.506] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.508] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.511] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.512] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.513] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.514] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.516] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.520] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.522] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.524] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.526] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.528] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.529] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.531] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.533] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.535] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.536] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.537] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.539] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.541] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.542] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.543] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.545] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.546] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.547] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.549] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.551] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.553] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.554] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.555] Server  ERROR    ⨯ ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:12.557] Server  LOG      ✓ Compiled in 111ms
+[00:20:13.172] Browser ERROR   ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:20:13.172] Browser ERROR   ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js:29:1
+Module not found: Can't resolve './shared/EndingScreen'
+  27 | export { TransitionScreen } from "./shared/TransitionScreen";
+  28 | export { IntroScreen } from "./shared/IntroScreen";
+> 29 | export { EndingScreen } from "./shared/EndingScreen";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  30 |
+  31 | // Effects
+  32 | export {
+
+Import traces:
+  Client Component Browser:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component Browser]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+  Client Component SSR:
+    ./Desktop/IdeaGeneral/ideegeneral/app/components/index.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Client Component SSR]
+    ./Desktop/IdeaGeneral/ideegeneral/app/page.js [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:21:19.164] Browser WARN    You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.
+[00:21:19.164] Browser WARN    You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.
+[00:22:04.626] Server  LOG      ✓ Compiled in 39ms
+[00:22:17.034] Browser WARN    You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.
+[00:22:17.034] Browser WARN    You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.
+[00:22:18.866] Browser WARN    You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.
+[00:22:18.866] Browser WARN    You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.
+[00:22:18.866] Browser WARN    You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.
+[00:22:18.866] Browser WARN    You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.

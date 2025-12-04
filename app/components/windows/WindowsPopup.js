@@ -403,24 +403,24 @@ export function WindowsPopup({
 export function usePopupManager(isActive, onTriggerCrash, playSound) {
   const [popups, setPopups] = useState([]);
   const [interactionCount, setInteractionCount] = useState(0);
-  const CRASH_THRESHOLD = 6; // Nombre d'interactions avant crash possible
+  const CRASH_THRESHOLD = 10; // Nombre d'interactions avant crash possible
 
   // Stocker la ref pour éviter les re-renders
   const crashRef = useRef(onTriggerCrash);
   crashRef.current = onTriggerCrash;
 
-  // Timer de 1min max avant crash automatique
+  // Timer de 2min max avant crash automatique (si pas de clic)
   useEffect(() => {
     if (!isActive) return;
 
     const maxTimeBeforeCrash = setTimeout(() => {
       crashRef.current?.();
-    }, 60000); // 60 secondes = 1min
+    }, 120000); // 120 secondes = 2min
 
     return () => clearTimeout(maxTimeBeforeCrash);
   }, [isActive]);
 
-  // Générer des popups périodiquement
+  // Générer des popups périodiquement - PLUS FRÉQUENT
   useEffect(() => {
     if (!isActive) return;
 
@@ -440,24 +440,28 @@ export function usePopupManager(isActive, onTriggerCrash, playSound) {
       playSound?.();
     };
 
-    // Premier popup après 4 secondes
-    const initialTimeout = setTimeout(spawnPopup, 4000);
+    // Premier popup après 2 secondes
+    const initialTimeout = setTimeout(spawnPopup, 2000);
 
-    // Deuxième popup après 8 secondes
-    const secondTimeout = setTimeout(spawnPopup, 8000);
+    // Deuxième popup après 4 secondes
+    const secondTimeout = setTimeout(spawnPopup, 4000);
 
-    // Puis toutes les 5-8 secondes (beaucoup plus de temps pour interagir)
+    // Troisième popup après 6 secondes
+    const thirdTimeout = setTimeout(spawnPopup, 6000);
+
+    // Puis toutes les 3-5 secondes (plus de popups!)
     const interval = setInterval(() => {
       spawnPopup();
-      // Très rarement spawn 2 popups d'un coup
-      if (Math.random() > 0.9) {
-        setTimeout(spawnPopup, 800);
+      // 30% de chance de spawn 2 popups d'un coup
+      if (Math.random() > 0.7) {
+        setTimeout(spawnPopup, 500);
       }
-    }, 5000 + Math.random() * 3000);
+    }, 3000 + Math.random() * 2000);
 
     return () => {
       clearTimeout(initialTimeout);
       clearTimeout(secondTimeout);
+      clearTimeout(thirdTimeout);
       clearInterval(interval);
     };
   }, [isActive, playSound]);
@@ -465,8 +469,8 @@ export function usePopupManager(isActive, onTriggerCrash, playSound) {
   const closePopup = useCallback((id) => {
     setInteractionCount((prev) => {
       const newCount = prev + 1;
-      // 50% de chance de crash après le seuil
-      if (newCount >= CRASH_THRESHOLD && Math.random() > 0.5) {
+      // 40% de chance de crash après le seuil
+      if (newCount >= CRASH_THRESHOLD && Math.random() > 0.6) {
         crashRef.current?.();
       }
       return newCount;

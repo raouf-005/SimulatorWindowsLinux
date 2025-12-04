@@ -195,7 +195,7 @@ export function IntroScreen({ onStart }) {
 
       {/* Nuit de l'Info badge */}
       <div className="absolute top-4 right-4 bg-white/10 backdrop-blur-sm rounded-lg px-3 py-1.5 text-white text-xs">
-        🌙 Nuit de l&apos;Info 2024
+        🌙 Nuit de l&apos;Info 2025
       </div>
 
       {/* Indicateur de progression */}
