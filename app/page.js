@@ -336,16 +336,14 @@ export default function Home() {
             <SystemMonitor isHealthy={true} cpuUsage={12} />
           </div>
 
-          {/* Bouton CTA */}
+          {/* Bouton CTA - vers ending */}
           <div className="absolute bottom-4 right-4 z-40">
-            <a
-              href="https://www.numerique.gouv.fr/publications/politique-logiciel-libre/"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => setMode(MODES.ENDING)}
               className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-400 hover:to-red-400 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-all hover:scale-105 flex items-center gap-2"
             >
-              📥 Télécharger le Guide NIRD
-            </a>
+              🎉 Continuer vers la conclusion
+            </button>
           </div>
 
           {/* Mascotte Tux */}
@@ -353,6 +351,11 @@ export default function Home() {
             🐧
           </div>
         </div>
+      )}
+
+      {/* ============ ÉCRAN DE FIN ============ */}
+      {mode === MODES.ENDING && (
+        <EndingScreen moneySaved={money} onRestart={restartSimulation} />
       )}
     </div>
   );
