@@ -3,6 +3,40 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+// Positions fixes pour éviter les erreurs d'hydratation
+const PARTICLES = [
+  { left: "5%", top: "10%", delay: 0 },
+  { left: "15%", top: "25%", delay: 0.2 },
+  { left: "25%", top: "15%", delay: 0.4 },
+  { left: "35%", top: "30%", delay: 0.6 },
+  { left: "45%", top: "5%", delay: 0.8 },
+  { left: "55%", top: "20%", delay: 1 },
+  { left: "65%", top: "35%", delay: 0.1 },
+  { left: "75%", top: "10%", delay: 0.3 },
+  { left: "85%", top: "25%", delay: 0.5 },
+  { left: "95%", top: "15%", delay: 0.7 },
+  { left: "10%", top: "50%", delay: 0.9 },
+  { left: "20%", top: "60%", delay: 0.15 },
+  { left: "30%", top: "70%", delay: 0.35 },
+  { left: "40%", top: "55%", delay: 0.55 },
+  { left: "50%", top: "75%", delay: 0.75 },
+  { left: "60%", top: "50%", delay: 0.95 },
+  { left: "70%", top: "65%", delay: 0.05 },
+  { left: "80%", top: "55%", delay: 0.25 },
+  { left: "90%", top: "45%", delay: 0.45 },
+  { left: "8%", top: "80%", delay: 0.65 },
+  { left: "18%", top: "90%", delay: 0.85 },
+  { left: "28%", top: "85%", delay: 0.12 },
+  { left: "38%", top: "75%", delay: 0.32 },
+  { left: "48%", top: "90%", delay: 0.52 },
+  { left: "58%", top: "80%", delay: 0.72 },
+  { left: "68%", top: "70%", delay: 0.92 },
+  { left: "78%", top: "85%", delay: 0.08 },
+  { left: "88%", top: "75%", delay: 0.28 },
+  { left: "98%", top: "65%", delay: 0.48 },
+  { left: "3%", top: "40%", delay: 0.68 },
+];
+
 export function IntroScreen({ onStart }) {
   const [step, setStep] = useState(0);
   const [showButton, setShowButton] = useState(false);
@@ -21,12 +55,7 @@ export function IntroScreen({ onStart }) {
     {
       icon: "🐧",
       title: "La Gendarmerie Nationale...",
-      text: "A migré 37 000 postes vers Linux. Résultat : 2 millions €/an d'économies et zéro ransomware.",
-    },
-    {
-      icon: "🎮",
-      title: "Cette simulation interactive...",
-      text: "Vous fait vivre la différence entre un système propriétaire coûteux et un système libre.",
+      text: "A migré 37 000 postes vers Linux. Résultat : 2 millions €/an d'économies.",
     },
   ];
 
@@ -34,7 +63,7 @@ export function IntroScreen({ onStart }) {
     if (step < introSteps.length) {
       const timeout = setTimeout(() => {
         setStep((prev) => prev + 1);
-      }, 3500);
+      }, 1800); // PLUS RAPIDE - 1.8 secondes
       return () => clearTimeout(timeout);
     } else {
       setShowButton(true);
@@ -43,24 +72,21 @@ export function IntroScreen({ onStart }) {
 
   return (
     <div className="w-full h-full bg-gradient-to-br from-[#0a0a0f] via-[#1a1a2e] to-[#0f0f1a] flex flex-col items-center justify-center p-8 relative overflow-hidden">
-      {/* Particules de fond */}
-      <div className="absolute inset-0 overflow-hidden">
-        {[...Array(50)].map((_, i) => (
+      {/* Particules avec positions fixes */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {PARTICLES.map((particle, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 bg-blue-500/30 rounded-full"
-            initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
-            }}
+            className="absolute w-1 h-1 bg-blue-500/40 rounded-full"
+            style={{ left: particle.left, top: particle.top }}
             animate={{
-              y: [null, -20, 20],
-              opacity: [0.2, 0.8, 0.2],
+              y: [0, -15, 15, 0],
+              opacity: [0.3, 0.7, 0.3],
             }}
             transition={{
-              duration: 3 + Math.random() * 2,
+              duration: 4,
               repeat: Infinity,
-              delay: Math.random() * 2,
+              delay: particle.delay,
             }}
           />
         ))}
@@ -68,41 +94,38 @@ export function IntroScreen({ onStart }) {
 
       {/* Logo NIRD */}
       <motion.div
-        initial={{ opacity: 0, y: -50 }}
+        initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        className="mb-8 text-center z-10"
+        transition={{ duration: 0.5 }}
+        className="mb-6 text-center z-10"
       >
-        <h1 className="text-4xl sm:text-6xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-green-400 bg-clip-text text-transparent mb-2">
+        <h1 className="text-3xl sm:text-5xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-green-400 bg-clip-text text-transparent mb-2">
           L&apos;Écran Bleu de la Libération
         </h1>
-        <p className="text-gray-400 text-lg">
+        <p className="text-gray-400 text-base">
           Une expérience interactive par le mouvement NIRD
         </p>
       </motion.div>
 
       {/* Steps */}
-      <div className="max-w-2xl w-full z-10">
+      <div className="max-w-xl w-full z-10 min-h-[180px]">
         <AnimatePresence mode="wait">
           {introSteps.map(
             (item, index) =>
               index < step && (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, x: -50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0.5 }}
-                  transition={{ duration: 0.5 }}
-                  className={`flex items-start gap-4 mb-6 ${
-                    index < step - 1 ? "opacity-50" : ""
-                  }`}
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: index < step - 1 ? 0.4 : 1, x: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="flex items-start gap-4 mb-4"
                 >
-                  <div className="text-4xl">{item.icon}</div>
+                  <div className="text-3xl">{item.icon}</div>
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-1">
+                    <h3 className="text-lg font-bold text-white mb-1">
                       {item.title}
                     </h3>
-                    <p className="text-gray-300">{item.text}</p>
+                    <p className="text-gray-300 text-sm">{item.text}</p>
                   </div>
                 </motion.div>
               )
@@ -110,33 +133,70 @@ export function IntroScreen({ onStart }) {
         </AnimatePresence>
       </div>
 
-      {/* Bouton Start */}
+      {/* Bouton Start - SUPER ATTRACTIF */}
       <AnimatePresence>
         {showButton && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, type: "spring" }}
-            className="mt-8 z-10"
+            transition={{ duration: 0.3, type: "spring", bounce: 0.5 }}
+            className="mt-4 z-10"
           >
-            <button
+            <motion.button
               onClick={onStart}
-              className="group relative px-12 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl text-white text-xl font-bold overflow-hidden transition-all hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30"
+              whileHover={{ scale: 1.08 }}
+              whileTap={{ scale: 0.95 }}
+              animate={{
+                boxShadow: [
+                  "0 0 20px rgba(236, 72, 153, 0.5)",
+                  "0 0 50px rgba(236, 72, 153, 0.9)",
+                  "0 0 20px rgba(236, 72, 153, 0.5)",
+                ],
+              }}
+              transition={{
+                boxShadow: { duration: 1.2, repeat: Infinity },
+              }}
+              className="relative px-10 py-5 bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 rounded-2xl text-white text-xl font-bold overflow-hidden cursor-pointer"
             >
+              {/* Effet de brillance */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent"
+                animate={{ x: ["-200%", "200%"] }}
+                transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
+              />
               <span className="relative z-10 flex items-center gap-3">
-                <span>🖥️</span>
-                <span>Commencer la Simulation</span>
-                <span>→</span>
+                <span className="text-2xl">🚀</span>
+                <span>LANCER LA SIMULATION</span>
+                <span className="text-2xl">💥</span>
               </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity" />
-            </button>
-            <p className="text-center text-gray-500 text-sm mt-4">
-              Préparez-vous à expérimenter Windows... puis à découvrir la
-              liberté.
-            </p>
+            </motion.button>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="text-center text-gray-400 text-sm mt-3"
+            >
+              Préparez-vous à vivre l&apos;enfer Windows... 😈
+            </motion.p>
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Skip button */}
+      <motion.button
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5 }}
+        onClick={onStart}
+        className="absolute bottom-4 right-4 text-gray-500 hover:text-white text-sm underline z-20 cursor-pointer"
+      >
+        Passer l&apos;intro →
+      </motion.button>
+
+      {/* Nuit de l'Info badge */}
+      <div className="absolute top-4 right-4 bg-white/10 backdrop-blur-sm rounded-lg px-3 py-1.5 text-white text-xs">
+        🌙 Nuit de l&apos;Info 2024
+      </div>
 
       {/* Indicateur de progression */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2">
@@ -148,11 +208,6 @@ export function IntroScreen({ onStart }) {
             }`}
           />
         ))}
-      </div>
-
-      {/* Nuit de l'Info badge */}
-      <div className="absolute top-4 right-4 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2 text-white text-sm">
-        🌙 Nuit de l&apos;Info 2024
       </div>
     </div>
   );

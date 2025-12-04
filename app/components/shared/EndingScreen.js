@@ -3,6 +3,40 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+// Positions fixes pour les confettis
+const CONFETTI_POSITIONS = [
+  { left: "5%", color: "bg-green-500", delay: 0 },
+  { left: "10%", color: "bg-purple-500", delay: 0.3 },
+  { left: "15%", color: "bg-yellow-500", delay: 0.6 },
+  { left: "20%", color: "bg-green-500", delay: 0.9 },
+  { left: "25%", color: "bg-purple-500", delay: 1.2 },
+  { left: "30%", color: "bg-yellow-500", delay: 1.5 },
+  { left: "35%", color: "bg-green-500", delay: 0.1 },
+  { left: "40%", color: "bg-purple-500", delay: 0.4 },
+  { left: "45%", color: "bg-yellow-500", delay: 0.7 },
+  { left: "50%", color: "bg-green-500", delay: 1.0 },
+  { left: "55%", color: "bg-purple-500", delay: 1.3 },
+  { left: "60%", color: "bg-yellow-500", delay: 0.2 },
+  { left: "65%", color: "bg-green-500", delay: 0.5 },
+  { left: "70%", color: "bg-purple-500", delay: 0.8 },
+  { left: "75%", color: "bg-yellow-500", delay: 1.1 },
+  { left: "80%", color: "bg-green-500", delay: 1.4 },
+  { left: "85%", color: "bg-purple-500", delay: 0.15 },
+  { left: "90%", color: "bg-yellow-500", delay: 0.45 },
+  { left: "95%", color: "bg-green-500", delay: 0.75 },
+  { left: "3%", color: "bg-purple-500", delay: 1.05 },
+  { left: "13%", color: "bg-yellow-500", delay: 1.35 },
+  { left: "23%", color: "bg-green-500", delay: 0.25 },
+  { left: "33%", color: "bg-purple-500", delay: 0.55 },
+  { left: "43%", color: "bg-yellow-500", delay: 0.85 },
+  { left: "53%", color: "bg-green-500", delay: 1.15 },
+  { left: "63%", color: "bg-purple-500", delay: 1.45 },
+  { left: "73%", color: "bg-yellow-500", delay: 0.05 },
+  { left: "83%", color: "bg-green-500", delay: 0.35 },
+  { left: "93%", color: "bg-purple-500", delay: 0.65 },
+  { left: "8%", color: "bg-yellow-500", delay: 0.95 },
+];
+
 export function EndingScreen({ moneySaved, onRestart }) {
   const [phase, setPhase] = useState(0);
   const [showActions, setShowActions] = useState(false);
@@ -80,31 +114,22 @@ export function EndingScreen({ moneySaved, onRestart }) {
 
   return (
     <div className="w-full h-full bg-gradient-to-br from-[#0d1117] via-[#1a1a2e] to-[#2d1b4e] flex flex-col items-center justify-start p-4 sm:p-8 relative overflow-y-auto">
-      {/* Particules de célébration */}
+      {/* Particules de célébration avec positions fixes */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        {[...Array(100)].map((_, i) => (
+        {CONFETTI_POSITIONS.map((confetti, i) => (
           <motion.div
             key={i}
-            className={`absolute w-2 h-2 rounded-full ${
-              i % 3 === 0
-                ? "bg-green-500"
-                : i % 3 === 1
-                ? "bg-purple-500"
-                : "bg-yellow-500"
-            }`}
-            initial={{
-              x: Math.random() * (typeof window !== "undefined" ? window.innerWidth : 1000),
-              y: -20,
-              scale: Math.random() * 0.5 + 0.5,
-            }}
+            className={`absolute w-2 h-2 rounded-full ${confetti.color}`}
+            style={{ left: confetti.left }}
+            initial={{ y: -20 }}
             animate={{
-              y: typeof window !== "undefined" ? window.innerHeight + 20 : 1000,
-              rotate: 360 * (Math.random() > 0.5 ? 1 : -1),
+              y: "100vh",
+              rotate: i % 2 === 0 ? 360 : -360,
             }}
             transition={{
-              duration: 3 + Math.random() * 3,
+              duration: 4,
               repeat: Infinity,
-              delay: Math.random() * 5,
+              delay: confetti.delay,
               ease: "linear",
             }}
           />
@@ -129,9 +154,7 @@ export function EndingScreen({ moneySaved, onRestart }) {
               </h1>
               <p
                 className={`text-2xl sm:text-4xl ${
-                  phase === 2
-                    ? "text-green-400 font-bold"
-                    : "text-gray-300"
+                  phase === 2 ? "text-green-400 font-bold" : "text-gray-300"
                 }`}
               >
                 {phases[phase - 1].subtitle}
@@ -237,9 +260,10 @@ export function EndingScreen({ moneySaved, onRestart }) {
             className="bg-purple-500/10 border border-purple-500/30 rounded-xl p-6 mb-8 text-center"
           >
             <p className="text-lg text-gray-300 italic mb-4">
-              &ldquo;La liberté informatique n&apos;est pas une option, c&apos;est un
-              droit fondamental. Ensemble, libérons nos administrations et nos
-              citoyens du joug des logiciels propriétaires.&rdquo;
+              &ldquo;La liberté informatique n&apos;est pas une option,
+              c&apos;est un droit fondamental. Ensemble, libérons nos
+              administrations et nos citoyens du joug des logiciels
+              propriétaires.&rdquo;
             </p>
             <p className="text-purple-400 font-bold">— Mouvement NIRD</p>
           </motion.div>
