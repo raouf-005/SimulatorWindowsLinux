@@ -143,11 +143,16 @@ export default function Home() {
   const completeTransition = useCallback(() => {
     setMoney(20000000); // Reset du budget initial Linux
     setMode(MODES.LINUX);
-    soundManager.playSuccessSound();
-    // Aller à l'ending après 20 secondes en mode Linux
-    setTimeout(() => {
+    try {
+      soundManager.playSuccessSound();
+    } catch (e) {
+      console.log("Sound error:", e);
+    }
+    // Aller à l'ending après 90 secondes en mode Linux
+    const timer = setTimeout(() => {
       setMode(MODES.ENDING);
-    }, 20000);
+    }, 120000);
+    return () => clearTimeout(timer);
   }, [setMoney, soundManager]);
 
   // Recommencer la simulation
@@ -279,7 +284,7 @@ export default function Home() {
 
       {/* ============ TRANSITION ============ */}
       {mode === MODES.TRANSITION && (
-        <TransitionScreen onComplete={completeTransition} duration={3000} />
+        <TransitionScreen onComplete={completeTransition} duration={1000} />
       )}
 
       {/* ============ MODE LINUX ============ */}

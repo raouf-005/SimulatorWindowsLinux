@@ -1,42 +1,50 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export function BlueScreenOfDeath({ onHackerReady }) {
   const [showHacker, setShowHacker] = useState(false);
   const [hackerText, setHackerText] = useState("");
   const [showButton, setShowButton] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [glitch, setGlitch] = useState(false);
 
-  // Animation du "progrès" qui n'avance pas vraiment
+  // Simulation of stuck progress
   useEffect(() => {
     const interval = setInterval(() => {
       setProgress((prev) => {
-        // Le progrès reste bloqué
-        if (prev >= 21) return 21;
+        if (prev >= 21) return 21; // Stuck at 21%
         return prev + Math.random() * 3;
       });
-    }, 500);
+    }, 400);
     return () => clearInterval(interval);
   }, []);
 
-  // Faire apparaître le hacker après un délai
+  // Trigger Hacker Sequence
   useEffect(() => {
     const timeout = setTimeout(() => {
-      setShowHacker(true);
-      typeHackerMessage();
-    }, 2000); // Plus rapide - 2 secondes au lieu de 4
+      setGlitch(true); // Trigger screen glitch before terminal appears
+      setTimeout(() => {
+        setShowHacker(true);
+        setGlitch(false);
+        typeHackerMessage();
+      }, 400);
+    }, 500);
     return () => clearTimeout(timeout);
   }, []);
 
   const typeHackerMessage = () => {
     const messages = [
-      "root@gendarmerie:~$ Détection d'un système en détresse...",
-      "root@gendarmerie:~$ Ne jette pas ton PC !",
-      "root@gendarmerie:~$ La Gendarmerie Nationale utilise Linux depuis 2005.",
-      "root@gendarmerie:~$ 37 000 postes migrés. Zéro ransomware.",
-      "root@gendarmerie:~$ Économies réalisées : 2 millions €/an",
-      "root@gendarmerie:~$ Veux-tu reprendre le contrôle de ta machine ?",
+      "root@rescue-sys:~$ CONNECTION ESTABLISHED.",
+      "root@rescue-sys:~$ ANALYZING SYSTEM FAILURE...",
+      "> ERROR: PLANNED_OBSOLESCENCE DETECTED.",
+      "> HARDWARE STATUS: HEALTHY.",
+      "> OS STATUS: CRITICAL BLOATWARE.",
+      "root@rescue-sys:~$ INITIALIZING LINUX KERNEL...",
+      "root@rescue-sys:~$ GENDARMERIE_PROTOCOL_V2.0 ACTIVATED.",
+      "root@rescue-sys:~$ SAVING 2 MILLION EUROS/YEAR...",
+      "root@rescue-sys:~$ READY FOR USER INPUT.",
     ];
 
     let fullText = "";
@@ -56,98 +64,158 @@ export function BlueScreenOfDeath({ onHackerReady }) {
           charIndex = 0;
 
           if (msgIndex === messages.length) {
-            setTimeout(() => setShowButton(true), 500);
+            setTimeout(() => setShowButton(true), 200);
           }
         }
       } else {
         clearInterval(typeInterval);
       }
-    }, 30);
+    }, 5);
 
     return () => clearInterval(typeInterval);
   };
 
   return (
-    <div className="w-full h-full bg-[#0078d7] flex flex-col items-center justify-center p-4 sm:p-8 relative overflow-hidden">
-      {/* Contenu principal BSOD */}
-      <div className="text-white text-center max-w-2xl z-10">
-        <div className="text-7xl sm:text-9xl mb-6 sm:mb-8">:(</div>
-        <h1 className="text-xl sm:text-2xl mb-4">
-          Votre PC a rencontré un problème et doit redémarrer.
-        </h1>
+    <div className="relative w-full h-full bg-[#0078D7] font-sans overflow-hidden select-none cursor-wait">
+      {/* --- CRT MONITOR OVERLAY EFFECTS --- */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.1)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] z-50 bg-[size:100%_2px,3px_100%] pointer-events-none opacity-40" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_50%,rgba(0,0,0,0.4)_100%)] z-40 pointer-events-none" />
 
-        <div className="bg-[#005a9e] rounded-lg p-4 sm:p-6 mt-6 sm:mt-8 text-left font-mono text-xs sm:text-sm">
-          <p className="text-yellow-300 font-bold mb-2">
-            ERREUR FATALE : OBSOLESCENCE_PROGRAMMEE
-          </p>
-          <p className="mb-4 text-white/90">
-            Votre ordinateur est parfaitement fonctionnel, mais Microsoft a
-            décidé qu&apos;il était trop vieux pour Windows 11.
-          </p>
-          <p className="text-red-300 font-bold">
-            Conséquence : Veuillez acheter un nouvel ordinateur.
-          </p>
-          <p className="text-gray-300 mt-2 text-xs">
-            (Vous rejoindrez les 400 millions d&apos;ordinateurs jetés à la
-            poubelle chaque année pour cause d&apos;&quot;incompatibilité&quot;)
-          </p>
-        </div>
+      {/* --- GLITCH WRAPPER --- */}
+      <motion.div
+        className="w-full h-full flex flex-col items-start p-8 sm:p-20 pt-16 sm:pt-32"
+        animate={
+          glitch
+            ? {
+                x: [-5, 5, -5, 5, 0],
+                filter: [
+                  "hue-rotate(0deg)",
+                  "hue-rotate(90deg)",
+                  "hue-rotate(0deg)",
+                ],
+              }
+            : {}
+        }
+        transition={{ duration: 0.2 }}
+      >
+        {/* Sad Face */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="text-white text-[8rem] sm:text-[10rem] leading-none font-light mb-8 font-mono"
+        >
+          :(
+        </motion.div>
 
-        {/* Fausse barre de progression */}
-        <div className="mt-6 sm:mt-8 flex flex-col items-center gap-2">
-          <div className="flex items-center gap-3">
-            <div className="w-6 h-6 sm:w-8 sm:h-8 border-4 border-white border-t-transparent rounded-full animate-spin" />
-            <span className="text-sm opacity-70">
-              {Math.floor(progress)}% complété
+        {/* Error Text */}
+        <div className="text-white max-w-4xl space-y-6">
+          <h1 className="text-xl sm:text-3xl font-light">
+            Votre ordinateur a rencontré un problème et doit redémarrer. Nous
+            collectons simplement des informations relatives aux erreurs, puis
+            nous redémarrerons l&apos;ordinateur pour vous.
+          </h1>
+
+          <div className="flex items-center gap-4 text-xl sm:text-2xl mt-8">
+            <span className="font-light">
+              {Math.floor(progress)}% effectués
             </span>
           </div>
-          <div className="w-48 sm:w-64 h-2 bg-white/20 rounded-full overflow-hidden">
-            <div
-              className="h-full bg-white transition-all duration-500"
-              style={{ width: `${progress}%` }}
-            />
-          </div>
-          <p className="text-xs opacity-50 mt-2">
-            Collecte de vos données personnelles pour améliorer votre expérience
-            Microsoft...
-          </p>
-        </div>
 
-        <p className="mt-4 text-xs opacity-40">
-          Code d&apos;arrêt : MICROSOFT_PLANNED_OBSOLESCENCE_0x80070005
-        </p>
-      </div>
+          <div className="flex flex-col sm:flex-row items-start gap-8 mt-12 pt-8">
+            {/* QR Code Style */}
+            <div className="bg-white p-2 w-24 h-24 sm:w-32 sm:h-32 flex-shrink-0">
+              <div className="w-full h-full bg-[url('https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=LinuxIsBetter')] bg-cover rendering-pixelated" />
+            </div>
 
-      {/* Terminal Hacker */}
-      {showHacker && (
-        <div className="absolute bottom-4 left-4 right-4 sm:bottom-8 sm:left-8 sm:right-8 bg-black/95 rounded-lg p-4 sm:p-6 border-2 border-green-500 shadow-2xl shadow-green-500/20 z-20">
-          <div className="flex items-start gap-3 sm:gap-4">
-            <div className="text-4xl sm:text-5xl">🐧</div>
-            <div className="flex-1 overflow-hidden">
-              <div className="text-green-400 font-mono text-xs sm:text-sm whitespace-pre-line leading-relaxed">
-                {hackerText}
-                <span className="animate-pulse">▊</span>
-              </div>
-
-              {showButton && (
-                <button
-                  onClick={onHackerReady}
-                  className="mt-4 bg-green-500 hover:bg-green-400 text-black font-bold py-2 sm:py-3 px-6 sm:px-8 rounded-lg text-base sm:text-lg animate-pulse shadow-lg shadow-green-500/50 transition-all hover:scale-105"
-                >
-                  🐧 ESSAYER LINUX / NIRD
-                </button>
-              )}
+            <div className="text-sm sm:text-base font-light space-y-2 opacity-90">
+              <p>
+                Pour plus d&apos;informations sur ce problème et les solutions
+                possibles, consultez https://www.windows.com/stopcode
+              </p>
+              <br />
+              <p>
+                Si vous contactez l&apos;assistance, transmettez ces
+                informations :
+              </p>
+              <p className="font-mono text-xs sm:text-sm mt-2">
+                Code d&apos;arrêt :{" "}
+                <span className="font-bold">CRITICAL_PLANNED_OBSOLESCENCE</span>
+              </p>
+              <p className="font-mono text-xs sm:text-sm">
+                Éléments ayant échoué :{" "}
+                <span className="font-bold">
+                  win32k.sys (Too Old For Windows 11)
+                </span>
+              </p>
             </div>
           </div>
         </div>
-      )}
+      </motion.div>
 
-      {/* QR Code fictif */}
-      <div className="absolute bottom-4 left-4 hidden sm:block">
-        <div className="w-20 h-20 bg-white p-2 rounded">
-          <div className="w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMSAyMSI+PHBhdGggZD0iTTEgMWg3djdIMXptMiAyaDN2M0gzem05LTJoN3Y3aC03em0yIDJoM3YzaC0zem0tOSA5aDd2N0gxem0yIDJoM3YzSDN6Ii8+PC9zdmc+')] bg-contain" />
-        </div>
-      </div>
+      {/* --- HACKER / LINUX INTERVENTION --- */}
+      <AnimatePresence>
+        {showHacker && (
+          <motion.div
+            initial={{ y: "100%", opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ type: "spring", stiffness: 70, damping: 15 }}
+            className="absolute bottom-0 left-0 right-0 sm:bottom-12 sm:left-12 sm:right-12 z-50 flex justify-center items-end sm:items-center pointer-events-auto"
+          >
+            {/* Terminal Window */}
+            <div className="w-full max-w-3xl bg-[#0c0c0c]/95 backdrop-blur-xl rounded-t-xl sm:rounded-xl border border-green-500/30 shadow-[0_0_50px_rgba(0,0,0,0.6)] overflow-hidden flex flex-col">
+              {/* Terminal Header */}
+              <div className="bg-white/10 px-4 py-2 flex items-center justify-between border-b border-white/5">
+                <div className="flex gap-2">
+                  <div className="w-3 h-3 rounded-full bg-red-500" />
+                  <div className="w-3 h-3 rounded-full bg-yellow-500" />
+                  <div className="w-3 h-3 rounded-full bg-green-500" />
+                </div>
+                <div className="text-gray-400 text-xs font-mono uppercase tracking-widest">
+                  Rescue_Shell_v1.0.4
+                </div>
+                <div className="w-10" /> {/* Spacer for centering */}
+              </div>
+
+              {/* Terminal Body */}
+              <div className="p-6 font-mono text-sm sm:text-base min-h-[300px] flex flex-col relative">
+                {/* Background Grid inside terminal */}
+                <div className="absolute inset-0 bg-[linear-gradient(rgba(0,255,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,0,0.03)_1px,transparent_1px)] bg-[size:20px_20px] pointer-events-none" />
+
+                <div className="relative z-10 text-green-400 whitespace-pre-line leading-relaxed shadow-green-400/10 drop-shadow-[0_0_5px_rgba(74,222,128,0.5)]">
+                  {hackerText}
+                  <motion.span
+                    animate={{ opacity: [1, 0] }}
+                    transition={{ duration: 0.8, repeat: Infinity }}
+                    className="inline-block w-2.5 h-5 bg-green-400 ml-1 align-middle"
+                  />
+                </div>
+
+                {/* Action Button */}
+                {showButton && (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="mt-auto pt-6 flex justify-center w-full z-20"
+                  >
+                    <button
+                      onClick={onHackerReady}
+                      className="group relative px-8 py-3 bg-green-500 hover:bg-green-400 text-black font-bold font-mono rounded-md transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(34,197,94,0.4)] hover:shadow-[0_0_30px_rgba(34,197,94,0.6)]"
+                    >
+                      <span className="flex items-center gap-2">
+                        <span>🚀</span>
+                        <span>INITIALIZE_NIRD_PROTOCOL</span>
+                      </span>
+                      {/* Button Glitch Effect */}
+                      <div className="absolute inset-0 bg-white/20 skew-x-12 opacity-0 group-hover:animate-ping" />
+                    </button>
+                  </motion.div>
+                )}
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

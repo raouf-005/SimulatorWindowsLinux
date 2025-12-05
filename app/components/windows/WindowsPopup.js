@@ -403,7 +403,7 @@ export function WindowsPopup({
 export function usePopupManager(isActive, onTriggerCrash, playSound) {
   const [popups, setPopups] = useState([]);
   const [interactionCount, setInteractionCount] = useState(0);
-  const CRASH_THRESHOLD = 10; // Nombre d'interactions avant crash possible
+  const CRASH_THRESHOLD = 7; // Nombre d'interactions avant crash possible
 
   // Stocker la ref pour éviter les re-renders
   const crashRef = useRef(onTriggerCrash);
@@ -415,7 +415,7 @@ export function usePopupManager(isActive, onTriggerCrash, playSound) {
 
     const maxTimeBeforeCrash = setTimeout(() => {
       crashRef.current?.();
-    }, 120000); // 120 secondes = 2min
+    }, 90000); // 120 secondes = 2min
 
     return () => clearTimeout(maxTimeBeforeCrash);
   }, [isActive]);

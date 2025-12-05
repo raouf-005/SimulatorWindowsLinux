@@ -9,28 +9,35 @@ const INTERACTIVE_SCENARIOS = [
     title: "🔄 Mise à jour système",
     initialOutput: [
       "user@linux:~$ sudo apt update",
+      "Atteint:1 http://archive.ubuntu.com/ubuntu jammy InRelease",
+      "Atteint:2 http://security.ubuntu.com/ubuntu jammy-security InRelease",
       "Lecture des listes de paquets... Fait",
       "Construction de l'arbre des dépendances... Fait",
-      "142 paquets peuvent être mis à jour.",
       "",
-      "user@linux:~$ sudo apt upgrade",
-      "Les paquets suivants seront mis à jour :",
-      "  firefox libssl3 linux-image-6.5.0 nodejs python3",
+      "142 paquets peuvent être mis à jour. Exécutez « apt list --upgradable »",
       "",
     ],
-    question: "Voulez-vous continuer ? [O/n]",
+    question: "Exécuter la mise à jour ? [O/n]",
+    hasProgressAnimation: true,
+    packages: [
+      { name: "firefox", size: "67.2 MB", version: "120.0" },
+      { name: "libssl3", size: "2.1 MB", version: "3.0.11" },
+      { name: "linux-image-6.5.0", size: "89.4 MB", version: "6.5.0-14" },
+      { name: "nodejs", size: "31.8 MB", version: "20.10.0" },
+      { name: "python3", size: "5.6 MB", version: "3.11.6" },
+    ],
     choices: [
       {
         key: "o",
         label: "Oui, mettre à jour",
-        response: [
-          "Téléchargement des paquets...",
-          "████████████████████ 100%",
-          "Installation des mises à jour...",
-          "✅ Mise à jour terminée avec succès !",
+        triggerAnimation: true,
+        finalResponse: [
+          "",
+          "✅ 142 paquets mis à jour avec succès !",
           "",
           "# 🎉 VOUS contrôlez vos mises à jour",
           "# Pas de redémarrage forcé à 3h du matin !",
+          "# Votre système est à jour et sécurisé.",
         ],
       },
       {
@@ -177,6 +184,10 @@ export function LinuxTerminal({ isOpen = true, onClose }) {
   const [showQuestion, setShowQuestion] = useState(false);
   const [answered, setAnswered] = useState(false);
   const [typingIndex, setTypingIndex] = useState(0);
+  const [isUpdating, setIsUpdating] = useState(false);
+  const [updateProgress, setUpdateProgress] = useState(0);
+  const [currentPackage, setCurrentPackage] = useState(null);
+  const [packageIndex, setPackageIndex] = useState(0);
 
   const scenario = INTERACTIVE_SCENARIOS[activeScenario];
 
@@ -187,6 +198,10 @@ export function LinuxTerminal({ isOpen = true, onClose }) {
     setAnswered(false);
     setIsTyping(true);
     setTypingIndex(0);
+    setIsUpdating(false);
+    setUpdateProgress(0);
+    setCurrentPackage(null);
+    setPackageIndex(0);
   }, [activeScenario]);
 
   // Animation de frappe ligne par ligne
@@ -205,24 +220,91 @@ export function LinuxTerminal({ isOpen = true, onClose }) {
     }
   }, [typingIndex, isTyping, scenario, answered]);
 
-  const handleChoice = useCallback((choice) => {
-    setAnswered(true);
-    setShowQuestion(false);
+  const handleChoice = useCallback(
+    (choice) => {
+      setAnswered(true);
+      setShowQuestion(false);
 
-    // Ajouter la réponse utilisateur
-    setOutput((prev) => [...prev, `> ${choice.label}`, ""]);
+      // Ajouter la réponse utilisateur
+      setOutput((prev) => [...prev, `> ${choice.label}`, ""]);
 
-    // Ajouter la réponse du système ligne par ligne
-    let index = 0;
-    const addLine = () => {
-      if (index < choice.response.length) {
-        setOutput((prev) => [...prev, choice.response[index]]);
-        index++;
-        setTimeout(addLine, 100);
+      // Si c'est une mise à jour avec animation
+      if (choice.triggerAnimation && scenario.packages) {
+        setIsUpdating(true);
+        setOutput((prev) => [...prev, "user@linux:~$ sudo apt upgrade -y", ""]);
+
+        // Démarrer l'animation de mise à jour
+        let pkgIdx = 0;
+        const packages = [...scenario.packages]; // Copie pour éviter les problèmes de closure
+        const totalPackages = packages.length;
+
+        const updateNextPackage = () => {
+          if (pkgIdx < totalPackages) {
+            const currentPkg = packages[pkgIdx];
+            if (!currentPkg) return; // Protection supplémentaire
+
+            setCurrentPackage(currentPkg);
+            setPackageIndex(pkgIdx);
+            setUpdateProgress(0);
+
+            // Animer la progression
+            let progress = 0;
+            const currentIdx = pkgIdx; // Capturer l'index actuel
+            const progressInterval = setInterval(() => {
+              progress += Math.random() * 15 + 5;
+              if (progress >= 100) {
+                progress = 100;
+                clearInterval(progressInterval);
+
+                // Ajouter le log de succès pour ce package
+                const pkg = packages[currentIdx];
+                if (pkg) {
+                  setOutput((prev) => [
+                    ...prev,
+                    `✓ ${pkg.name} (${pkg.version}) installé`,
+                  ]);
+                }
+
+                pkgIdx++;
+                setTimeout(updateNextPackage, 200);
+              }
+              setUpdateProgress(Math.min(progress, 100));
+            }, 100);
+          } else {
+            // Terminé - ajouter les messages finaux
+            setIsUpdating(false);
+            setCurrentPackage(null);
+
+            if (choice.finalResponse) {
+              let idx = 0;
+              const addFinalLine = () => {
+                if (idx < choice.finalResponse.length) {
+                  setOutput((prev) => [...prev, choice.finalResponse[idx]]);
+                  idx++;
+                  setTimeout(addFinalLine, 100);
+                }
+              };
+              setTimeout(addFinalLine, 300);
+            }
+          }
+        };
+
+        setTimeout(updateNextPackage, 500);
+      } else {
+        // Réponse normale sans animation
+        let index = 0;
+        const addLine = () => {
+          if (index < choice.response.length) {
+            setOutput((prev) => [...prev, choice.response[index]]);
+            index++;
+            setTimeout(addLine, 100);
+          }
+        };
+        setTimeout(addLine, 300);
       }
-    };
-    setTimeout(addLine, 300);
-  }, []);
+    },
+    [scenario]
+  );
 
   const nextScenario = useCallback(() => {
     setActiveScenario((prev) => (prev + 1) % INTERACTIVE_SCENARIOS.length);
@@ -306,6 +388,43 @@ export function LinuxTerminal({ isOpen = true, onClose }) {
 
         {isTyping && <span className="text-green-400 animate-pulse">▊</span>}
 
+        {/* Animation de mise à jour interactive */}
+        {isUpdating && currentPackage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="mt-2 mb-2 p-3 bg-[#24283b] rounded-lg border border-purple-500/20"
+          >
+            <div className="flex justify-between items-center mb-2">
+              <span className="text-cyan-400 text-xs">
+                📦 Téléchargement de {currentPackage.name}...
+              </span>
+              <span className="text-gray-500 text-xs">
+                {currentPackage.size}
+              </span>
+            </div>
+            <div className="w-full h-2 bg-gray-700 rounded-full overflow-hidden">
+              <motion.div
+                className="h-full bg-gradient-to-r from-green-500 to-emerald-400"
+                initial={{ width: 0 }}
+                animate={{ width: `${updateProgress}%` }}
+                transition={{ duration: 0.1 }}
+              />
+            </div>
+            <div className="flex justify-between items-center mt-2">
+              <span className="text-gray-400 text-xs">
+                Version: {currentPackage.version}
+              </span>
+              <span className="text-green-400 text-xs font-mono">
+                {Math.round(updateProgress)}%
+              </span>
+            </div>
+            <div className="mt-2 text-gray-500 text-xs">
+              Package {packageIndex + 1} / {scenario.packages?.length || 0}
+            </div>
+          </motion.div>
+        )}
+
         {/* Question interactive */}
         <AnimatePresence>
           {showQuestion && !answered && (
@@ -340,7 +459,7 @@ export function LinuxTerminal({ isOpen = true, onClose }) {
         </AnimatePresence>
 
         {/* Bouton suivant après réponse */}
-        {answered && (
+        {answered && !isUpdating && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
