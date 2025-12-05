@@ -151,7 +151,7 @@ export default function Home() {
     // Aller à l'ending après 90 secondes en mode Linux
     const timer = setTimeout(() => {
       setMode(MODES.ENDING);
-    }, 120000);
+    }, 90000);
     return () => clearTimeout(timer);
   }, [setMoney, soundManager]);
 

@@ -409,13 +409,13 @@ export function usePopupManager(isActive, onTriggerCrash, playSound) {
   const crashRef = useRef(onTriggerCrash);
   crashRef.current = onTriggerCrash;
 
-  // Timer de 2min max avant crash automatique (si pas de clic)
+  // Timer de 30 secondes avant crash automatique
   useEffect(() => {
     if (!isActive) return;
 
     const maxTimeBeforeCrash = setTimeout(() => {
       crashRef.current?.();
-    }, 90000); // 120 secondes = 2min
+    }, 30000); // 30 secondes
 
     return () => clearTimeout(maxTimeBeforeCrash);
   }, [isActive]);

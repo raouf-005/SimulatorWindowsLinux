@@ -1,14 +1,9 @@
-[00:00:01.016] Server  LOG      ✓ Ready in 625ms
-[00:00:04.065] Server  LOG      ○ Compiling / ...
-[00:02:52.007] Server  LOG      ✓ Compiled in 48ms
-[00:03:28.176] Server  LOG      ✓ Compiled in 71ms
-[00:06:00.044] Server  LOG      ✓ Compiled in 49ms
-[00:06:52.513] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'name')
-[00:07:36.648] Server  LOG      ✓ Compiled in 93ms
-[00:08:54.675] Server  LOG      ✓ Compiled in 44ms
-[00:09:15.000] Server  LOG      ✓ Compiled in 47ms
-[00:12:53.561] Server  LOG      ✓ Compiled in 53ms
-[00:16:16.263] Server  LOG      ✓ Compiled in 72ms
-[00:21:37.028] Server  LOG      ✓ Compiled in 54ms
-[00:21:40.864] Server  LOG      ✓ Compiled in 43ms
-[00:21:58.156] Server  LOG      ✓ Compiled in 50ms
+[00:00:01.214] Server  LOG      ✓ Ready in 905ms
+[00:00:04.270] Server  LOG      ○ Compiling / ...
+[00:02:24.940] Server  LOG      ✓ Compiled in 70ms
+[00:03:45.479] Server  LOG      ✓ Compiled in 129ms
+[00:05:07.873] Server  LOG      ✓ Compiled in 157ms
+[00:06:59.781] Server  LOG      ✓ Compiled in 81ms
+[00:12:27.794] Server  LOG      ✓ Compiled in 125ms
+[00:13:46.183] Server  LOG      ✓ Compiled in 69ms
+[00:17:35.406] Server  LOG      ✓ Compiled in 134ms
